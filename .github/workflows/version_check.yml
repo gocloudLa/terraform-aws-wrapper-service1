@@ -112,9 +112,9 @@ jobs:
               
               # Compare versions (same as original)
               if [[ "$current_version" == "$LATEST_VERSION" ]]; then
-                analysis_results+=("✅ **$module_name**: Up-to-date (v$current_version)")
+                analysis_results+=("✅ \`${module_path}\` is up-to-date (**$current_version**)")
               else
-                analysis_results+=("❌ **$module_name**: Outdated (v$current_version → v$LATEST_VERSION)")
+                analysis_results+=("❌ \`${module_path}\` is outdated (used: **$current_version**, latest: **$LATEST_VERSION**)")
                 outdated_modules=$((outdated_modules + 1))
                 
                 # Store outdated module info as JSON for next job
@@ -252,7 +252,7 @@ jobs:
             
             if [[ -z "$existing_issue" ]]; then
               # Create new issue
-              echo "🌟 Creating new issue for: $module_name"
+              echo "🌟 Creating new issue for: $issue_title"
               gh issue create \
                 --title "$issue_title" \
                 --body "$issue_body" \
@@ -265,14 +265,14 @@ jobs:
               
               # Check if the issue needs updating
               if [[ "$existing_body" != *"$latest_version"* ]]; then
-                echo "✏️ Updating issue #$issue_number for: $module_name"
+                echo "✏️ Updating issue #$issue_number for: $issue_title"
                 gh issue edit "$issue_number" \
                   --title "$issue_title" \
                   --body "$issue_body" > /dev/null 2>&1
                 
                 issues_updated=$((issues_updated + 1))
               else
-                echo "✅ Issue already up-to-date for: $module_name"
+                echo "✅ Issue already up-to-date for: $issue_title"
                 issues_skipped=$((issues_skipped + 1))
               fi
             fi
