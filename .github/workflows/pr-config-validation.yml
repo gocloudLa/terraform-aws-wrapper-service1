@@ -1,0 +1,20 @@
+name: PR Config Validation
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+
+jobs:
+  validation:
+    uses: gocloudLa/.github/.github/workflows/pr-config.yml@main
+    with:
+      types: |
+        fix
+        feat
+        ci
+        chore
+      requireScope: false
+

@@ -1,0 +1,17 @@
+name: PR Terraform Validation
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+jobs:
+  terraform:
+    uses: gocloudLa/.github/.github/workflows/terraform-module.yml@main
+    with:
+      terraform_fmt_version: 'latest'
+      working_directory: '.'
+

@@ -1,0 +1,15 @@
+name: Terraform Readme Generator
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '*/10 * * * *'
+
+jobs:
+  generate-readme:
+    uses: gocloudLa/.github/.github/workflows/readme-generator.yml@feature/readme-generator # Remover esta ref finalizado el desarrollo
+    with:
+      readme_yaml: .github/readme/README.yaml
+      external_modules: .github/readme/external_modules.json
+      output_path: README.md
+    secrets: inherit 
