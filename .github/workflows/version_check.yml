@@ -112,9 +112,9 @@ jobs:
               
               # Compare versions (same as original)
               if [[ "$current_version" == "$LATEST_VERSION" ]]; then
-                analysis_results+=("✅ \`${module_path}\` is up-to-date (**$current_version**)")
+                analysis_results+=("✅ ${module_path} is up-to-date (**$current_version**)")
               else
-                analysis_results+=("❌ \`${module_path}\` is outdated (used: **$current_version**, latest: **$LATEST_VERSION**)")
+                analysis_results+=("❌ ${module_path} is outdated (used: **$current_version**, latest: **$LATEST_VERSION**)")
                 outdated_modules=$((outdated_modules + 1))
                 
                 # Store outdated module info as JSON for next job
