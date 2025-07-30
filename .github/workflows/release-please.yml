@@ -24,3 +24,5 @@ jobs:
           # for more options
           release-type: terraform-module
           target-branch: main
+          # Set initial version to 1.0.0
+          initial-version: 1.0.0
