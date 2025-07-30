@@ -62,18 +62,13 @@ jobs:
           # Capture terraform modules output in a variable
           terraform_modules_output=$(terraform modules)
           
-          # Debug: Show what we're processing
-          echo "DEBUG: terraform modules output:"
-          echo "$terraform_modules_output"
-          echo "DEBUG: End of output"
-          
-          # Process modules from the captured output
+          # Process modules using the exact same logic as original
           while IFS= read -r line; do
-            # Extract module information using regex (fixed for actual output format)
-            if [[ $line =~ \"([^\"]+)\"\[([^]]+)\][[:space:]]+([0-9]+\.[0-9]+\.[0-9]+) ]]; then
-              module_name="${BASH_REMATCH[1]}"
-              module_path="${BASH_REMATCH[2]}"
-              current_version="${BASH_REMATCH[3]}"
+            # Extract module information using the exact same sed pattern as original
+            module_info=$(echo "$line" | sed -nE 's/.*"([^"]+)"\[([^]]+)\][[:space:]]+([0-9]+\.[0-9]+\.[0-9]+).*$/\1|\2|\3/p')
+            
+            if [[ -n "$module_info" ]]; then
+              IFS="|" read -r module_name module_path current_version <<< "$module_info"
               
               # Clean up module name and version (same as original)
               module_name=$(echo "$module_name" | sed 's/^module\.//; s/ *$//')
@@ -87,39 +82,39 @@ jobs:
               
               total_modules=$((total_modules + 1))
               
-              # Extract registry components
-              registry_path="${module_path#registry.terraform.io/}"
-              IFS='/' read -r namespace name provider <<< "$registry_path"
+              # Extract namespace, name, and provider (same as original)
+              MODULE_INFO=$(echo "$module_path" | sed 's|^registry\.terraform\.io/||' | cut -d/ -f1-3)
+              IFS='/' read -r namespace name provider <<< "$MODULE_INFO"
               
               if [[ -z "$namespace" || -z "$name" || -z "$provider" ]]; then
                 analysis_results+=("⚠️ **$module_name**: Invalid registry path format")
                 continue
               fi
               
-              # Query Terraform Registry API
-              api_url="https://registry.terraform.io/v1/modules/${namespace}/${name}/${provider}/versions"
-              response=$(curl -s -H "Accept: application/json" "$api_url" 2>/dev/null)
+              # Query Terraform Registry API (same as original)
+              API_URL="https://registry.terraform.io/v1/modules/${namespace}/${name}/${provider}/versions"
+              RESPONSE=$(curl -s "$API_URL")
               
-              if [[ -z "$response" || "$response" == "null" ]]; then
+              if [[ -z "$RESPONSE" || "$RESPONSE" == "null" ]]; then
                 analysis_results+=("⚠️ **$module_name**: Unable to fetch version data from registry")
                 continue
               fi
               
-              # Extract latest version using jq
-              latest_version=$(echo "$response" | jq -r '.modules[0].versions | map(.version) | sort_by(split(".") | map(tonumber)) | last' 2>/dev/null)
+              # Extract latest version using jq (same as original)
+              LATEST_VERSION=$(echo "$RESPONSE" | jq -r '.modules[0].versions | map(.version) | sort_by(split(".") | map(tonumber)) | last')
               
-              if [[ -z "$latest_version" || "$latest_version" == "null" ]]; then
+              if [[ -z "$LATEST_VERSION" || "$LATEST_VERSION" == "null" ]]; then
                 analysis_results+=("⚠️ **$module_name**: Could not determine latest version")
                 continue
               fi
               
               processed_modules=$((processed_modules + 1))
               
-              # Compare versions
-              if [[ "$current_version" == "$latest_version" ]]; then
+              # Compare versions (same as original)
+              if [[ "$current_version" == "$LATEST_VERSION" ]]; then
                 analysis_results+=("✅ **$module_name**: Up-to-date (v$current_version)")
               else
-                analysis_results+=("❌ **$module_name**: Outdated (v$current_version → v$latest_version)")
+                analysis_results+=("❌ **$module_name**: Outdated (v$current_version → v$LATEST_VERSION)")
                 outdated_modules=$((outdated_modules + 1))
                 
                 # Store outdated module info as JSON for next job
@@ -127,7 +122,7 @@ jobs:
                   --arg name "$module_name" \
                   --arg path "$module_path" \
                   --arg current "$current_version" \
-                  --arg latest "$latest_version" \
+                  --arg latest "$LATEST_VERSION" \
                   --arg namespace "$namespace" \
                   --arg provider_name "$name" \
                   --arg provider_type "$provider" \
