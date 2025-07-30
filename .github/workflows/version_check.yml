@@ -64,11 +64,16 @@ jobs:
           
           # Process modules from the captured output
           while IFS= read -r line; do
-            # Extract module information using regex
-            if [[ $line =~ module\.([^[:space:]]+)\[([^]]+)\][[:space:]]+([0-9]+\.[0-9]+\.[0-9]+) ]]; then
+            # Extract module information using regex (same as original)
+            if [[ $line =~ \"([^\"]+)\"\[([^]]+)\][[:space:]]+([0-9]+\.[0-9]+\.[0-9]+) ]]; then
               module_name="${BASH_REMATCH[1]}"
               module_path="${BASH_REMATCH[2]}"
               current_version="${BASH_REMATCH[3]}"
+              
+              # Clean up module name and version (same as original)
+              module_name=$(echo "$module_name" | sed 's/^module\.//; s/ *$//')
+              module_path=$(echo "$module_path" | xargs)
+              current_version=$(echo "$current_version" | xargs | sed 's/^[^0-9]*//')
               
               # Skip non-registry modules
               if [[ ! "$module_path" =~ ^registry\.terraform\.io/ ]]; then
