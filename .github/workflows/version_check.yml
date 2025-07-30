@@ -172,6 +172,10 @@ jobs:
     needs: analyze_modules
     if: needs.analyze_modules.outputs.has_outdated_modules == 'true'
     runs-on: ubuntu-latest
+    outputs:
+      issues_created: ${{ steps.process_issues.outputs.issues_created }}
+      issues_updated: ${{ steps.process_issues.outputs.issues_updated }}
+      issues_skipped: ${{ steps.process_issues.outputs.issues_skipped }}
     
     steps:
       - name: 📥 Checkout repository
