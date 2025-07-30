@@ -217,7 +217,7 @@ jobs:
             latest_version=$(echo "$module_data" | jq -r '.latest_version')
             
             # Create issue title and body
-            issue_title="Upgrade(${module_name}): ${module_path} (${current_version} > ${latest_version})"
+            issue_title="Upgrade(${module_name}): ${module_path#registry.terraform.io/} (${current_version} > ${latest_version})"
             issue_body="## 📦 Module Version Upgrade Required
             
             **Module:** \`$module_name\`  
