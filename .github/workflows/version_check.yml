@@ -203,8 +203,10 @@ jobs:
           
           echo "🔍 Processing ${{ needs.analyze_modules.outputs.outdated_count }} outdated modules..."
           
-          # Process each outdated module from JSON
-          echo "$OUTDATED_MODULES_JSON" | jq -c '.[]' | while read -r module_data; do
+          # Process each outdated module from JSON using readarray to avoid subshell
+          readarray -t module_data_array < <(echo "$OUTDATED_MODULES_JSON" | jq -c '.[]')
+          
+          for module_data in "${module_data_array[@]}"; do
             module_name=$(echo "$module_data" | jq -r '.name')
             module_path=$(echo "$module_data" | jq -r '.path')
             current_version=$(echo "$module_data" | jq -r '.current_version')
