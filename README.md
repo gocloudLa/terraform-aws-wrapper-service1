@@ -1,5 +1,3 @@
-PEPE
-
 # Standard Platform - Terraform Module
 
 <div align="center">
@@ -15,7 +13,7 @@ PEPE
 Welcome to the Standard Platform — a suite of reusable and production-ready Terraform modules purpose-built for AWS environments.
 Each module encapsulates best practices, security configurations, and sensible defaults to simplify and standardize infrastructure provisioning across projects.
 
-## 📦 Module: Terraform ACM SSL Module
+## 📦 Module: Terraform ACM SSL Module VERSION2
 The Terraform Wrapper for ACM simplifies the configuration of the SSL Certificate Service in the AWS cloud. This wrapper functions as a predefined template, facilitating the creation and management of ACM by handling all the technical details.
 
 ### ✨ Features
