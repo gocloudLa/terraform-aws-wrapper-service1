@@ -1,6 +1,6 @@
 module "lambda_restore_dump" {
   source  = "terraform-aws-modules/lambda/aws"
-  version = "7.20.0"
+  version = "8.0.1"
 
   count = local.condition_create ? 1 : 0
 

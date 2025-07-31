@@ -3,7 +3,7 @@
 /*----------------------------------------------------------------------*/
 module "db_reset" {
   source  = "terraform-aws-modules/lambda/aws"
-  version = "4.7.1"
+  version = "8.0.1"
 
   for_each = var.rds_parameters
 
