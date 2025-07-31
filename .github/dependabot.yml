@@ -4,7 +4,10 @@
 version: 2
 updates:
   - package-ecosystem: "terraform" # See documentation for possible values
-    directories: "*"
+    directories: 
+      - "*"
+      # - "/"
+      # - "/modules/*/*/"
     schedule:
       interval: "weekly"
     # Add assignees
