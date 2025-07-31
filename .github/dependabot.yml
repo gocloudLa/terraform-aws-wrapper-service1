@@ -17,11 +17,11 @@ updates:
     # Add reviewer
     reviewers:
       - "fferron-gocloud"
-    groups:
-      all-terraform-dependencies:
-        patterns:
-          - "*"  # Incluye todas las dependencias
-        # update-types:
-        #   - "minor"
-        #   - "patch"
-        #   - "major"
+    # groups:
+    #   all-terraform-dependencies:
+    #     patterns:
+    #       - "*"  # Incluye todas las dependencias
+    #     # update-types:
+    #     #   - "minor"
+    #     #   - "patch"
+    #     #   - "major"
