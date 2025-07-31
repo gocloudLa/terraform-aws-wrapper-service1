@@ -23,9 +23,12 @@ The Terraform Wrapper for ACM simplifies the configuration of the SSL Certificat
 ### 🔗 External Modules
 | Name | Version |
 |------|------:|
-| [terraform-aws-modules/rds-aurora/aws](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora) | 9.9.1 |
-| [terraform-aws-modules/security-group/aws](https://github.com/terraform-aws-modules/terraform-aws-security-group) | ~> 4.0 |
-| [terraform-aws-modules/lambda/aws](https://github.com/terraform-aws-modules/terraform-aws-lambda) | 4.7.1 |
+| [terraform-aws-modules/eventbridge/aws](https://github.com/terraform-aws-modules/eventbridge-aws) | 4.1.0 |
+| [terraform-aws-modules/lambda/aws](https://github.com/terraform-aws-modules/lambda-aws) | 8.0.1 |
+| [terraform-aws-modules/rds/aws](https://github.com/terraform-aws-modules/rds-aws) | 6.12.0 |
+| [terraform-aws-modules/s3-bucket/aws](https://github.com/terraform-aws-modules/s3-bucket-aws) | 4.11.0 |
+| [terraform-aws-modules/security-group/aws](https://github.com/terraform-aws-modules/security-group-aws) | 5.3.0 |
+| [terraform-aws-modules/ssm-parameter/aws](https://github.com/terraform-aws-modules/ssm-parameter-aws) | 1.1.2 |
 
 
 
