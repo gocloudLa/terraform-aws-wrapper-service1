@@ -10,6 +10,7 @@ updates:
       - "/modules/*/*/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 20
     # Add assignees
     assignees:
       - "fmidaglia-gocloud"
