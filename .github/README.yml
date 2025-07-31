@@ -1,4 +1,4 @@
-module_name: Terraform ACM SSL Module
+module_name: Terraform ACM SSL Module VERSION2
 module_description: The Terraform Wrapper for ACM simplifies the configuration of the SSL Certificate Service in the AWS cloud. This wrapper functions as a predefined template, facilitating the creation and management of ACM by handling all the technical details.
 quick_start: |
   ```hcl
