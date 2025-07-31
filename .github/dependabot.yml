@@ -4,17 +4,7 @@
 version: 2
 updates:
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly"
-    # Add assignees
-    assignees:
-      - "fmidaglia-gocloud"
-    # Add reviewer
-    reviewers:
-      - "fferron-gocloud"
-  - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "example/complete" # Location of package manifests
+    directories: "*"
     schedule:
       interval: "weekly"
     # Add assignees
