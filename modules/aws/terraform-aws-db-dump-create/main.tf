@@ -129,7 +129,7 @@ module "s3_dump_objects" {
 
 module "eventbridge_create_dump" {
   source  = "terraform-aws-modules/eventbridge/aws"
-  version = "1.17.1"
+  version = "4.1.0"
 
   count = local.condition_create ? 1 : 0
 
