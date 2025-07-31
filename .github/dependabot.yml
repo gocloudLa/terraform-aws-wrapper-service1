@@ -1,0 +1,15 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "terraform" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    # Add assignees
+    assignees:
+      - "fmidaglia-gocloud"
+    # Add reviewer
+    reviewers:
+      - "fferron-gocloud"
