@@ -1,6 +1,6 @@
 FEDE2asd
 asdfasdf
-asdas
+
 
 # Standard Platform - Terraform Module
 
