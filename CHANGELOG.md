@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.1.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v3.0.0...v3.1.0) (2025-07-31)
+
+
+### Features
+
+* **ci:** Add Dependabot configuration. ([e1cb32e](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/e1cb32e2286ea84c5876c9c773e67b9785195acd))
+* **ci:** Add Dependabot configuration. ([4f341fb](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/4f341fb59366c06860b8c553812e1c924aacf249))
+* **ci:** Add Dependabot configuration. ([5833d20](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/5833d20b741aaf5cc3a8cbe1f9ab570d3b3c4344))
+* disable action ([f81d112](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/f81d112057f0aa5a44be683a3e4ba36f0eeb9d7e))
+* readme update ([3a487ec](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/3a487ec210c11706d4557f1828d8430e735fe9e7))
+* **readme:** change ([db8392c](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/db8392ce7954c13570bd5f9141344378da357e3c))
+* **readme:** change readme ([6f57846](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/6f578467f5e77fc0669a3edfb520e482e46d2255))
+* **readme:** refactor action ([a835eea](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/a835eea88e03479fbc517a01afcb328b714a0a69))
+
+
+### Bug Fixes
+
+* readme ([3f7dc87](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/3f7dc87200cf5a78711509d1d452be7787dbacf0))
+* readme name ([c777247](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/c777247fb8010f8dc2334ad6631663df151b5b72))
+
 ## [3.0.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v1.0.1...v3.0.0) (2025-07-31)
 
 
