@@ -14,7 +14,7 @@ updates:
     reviewers:
       - "fferron-gocloud"
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "examples/complete" # Location of package manifests
+    directory: "example/complete" # Location of package manifests
     schedule:
       interval: "weekly"
     # Add assignees
