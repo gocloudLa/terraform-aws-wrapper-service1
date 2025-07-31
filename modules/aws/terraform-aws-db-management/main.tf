@@ -1,6 +1,6 @@
 module "lambda_db_management" {
   source  = "terraform-aws-modules/lambda/aws"
-  version = "5.3.0"
+  version = "8.0.1"
 
   count = local.condition_create ? 1 : 0
 
