@@ -1,5 +1,5 @@
 ---
-name: "Events Workflow"
+name: "Pull Request Events Workflow"
 on:
   pull_request:
     branches: [main]
@@ -7,8 +7,6 @@ on:
   pull_request_target:
     branches: [main]
     types: [opened, edited, reopened]
-  push:
-    branches: [main]
 
 permissions:
   pull-requests: write
@@ -16,8 +14,8 @@ permissions:
   contents: write
 
 jobs:
-  events:
-    uses: gocloudLa/.github/.github/workflows/shared-terraform-events.yml@feature/readme-generator
+  pull-request-events:
+    uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@feature/readme-generator
     secrets: inherit
 
 
