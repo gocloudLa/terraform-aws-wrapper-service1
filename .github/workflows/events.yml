@@ -3,6 +3,9 @@ name: "Events Workflow"
 on:
   pull_request:
     branches: [main]
+  pull_request_target:
+    branches: [main]
+    types: [opened, edited, reopened]
   push:
     branches: [main]
 
