@@ -12,8 +12,8 @@ data "aws_route53_zone" "rds" {
 resource "aws_route53_record" "rds" {
   for_each = local.rds_route53
 
-  zone_id = data.aws_route53_zone.rds[each.key].zone_id
-  name   = lookup(each.value, "record_name")
+  zone_id         = data.aws_route53_zone.rds[each.key].zone_id
+  name            = lookup(each.value, "record_name")
   allow_overwrite = false
   type            = "CNAME"
   ttl             = lookup(each.value, "ttl")
