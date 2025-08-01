@@ -36,4 +36,5 @@ locals {
     if lookup(value1, "dns_records", null) != null
   ]
   rds_route53 = merge(local.rds_route53_tmp...)
+  pepe
 }
