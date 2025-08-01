@@ -10,11 +10,4 @@ on:
 jobs:
   validation:
     uses: gocloudLa/.github/.github/workflows/pr-config.yml@main
-    with:
-      types: |
-        fix
-        feat
-        ci
-        chore
-      requireScope: false
 

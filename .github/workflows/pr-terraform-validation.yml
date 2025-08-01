@@ -11,7 +11,3 @@ on:
 jobs:
   terraform:
     uses: gocloudLa/.github/.github/workflows/terraform-module.yml@main
-    with:
-      terraform_fmt_version: 'latest'
-      working_directory: '.'
-
