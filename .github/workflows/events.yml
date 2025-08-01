@@ -1,0 +1,17 @@
+---
+name: "Events Workflow"
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  pull-requests: write
+  id-token: write
+  contents: write
+
+jobs:
+  events:
+    uses: gocloudLa/.github/.github/workflows/shared-terraform-events.yml@feature/readme-generator
+    secrets: inherit
