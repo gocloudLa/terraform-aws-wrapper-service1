@@ -4,7 +4,10 @@ on:
   pull_request:
     branches: [main]
   pull_request_target:
-    types: [opened, edited, reopened]
+    types:
+      - opened
+      - edited
+      - reopened
   push:
     branches: [main]
 
@@ -17,3 +20,5 @@ jobs:
   events:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-events.yml@feature/readme-generator
     secrets: inherit
+
+
