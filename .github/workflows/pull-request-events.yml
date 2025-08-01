@@ -3,10 +3,7 @@ name: "Pull Request Events Workflow"
 on:
   pull_request:
     branches: [main]
-    types: [opened, reopened, synchronize]
-  pull_request_target:
-    branches: [main]
-    types: [opened, edited, reopened]
+    types: [opened, edited, reopened, synchronize]
 
 permissions:
   pull-requests: write
