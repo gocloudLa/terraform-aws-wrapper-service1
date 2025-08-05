@@ -33,3 +33,4 @@ data "aws_security_group" "default" {
     Name = "${local.common_name_prefix}-default"
   }
 }
+
