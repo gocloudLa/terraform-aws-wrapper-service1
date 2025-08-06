@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.2.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v3.1.0...v3.2.0) (2025-08-06)
+
+
+### Features
+
+* **actions:** add scheduled workflow ([3866368](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/386636829e72873cf29929dd01d05bd29b2ea03c))
+* **actions:** refactor ([3dcdfca](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/3dcdfcab80f5f6a6b3a0c3c0cb03b239b4782e95))
+* **feature_4:** add feature 4 PEP9 ([#74](https://github.com/gocloudLa/terraform-aws-wrapper-service1/issues/74)) ([acaca03](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/acaca0367c819d2407968c39a1d36f58cfc21545))
+* **feature2:** add new feature 2 ([#71](https://github.com/gocloudLa/terraform-aws-wrapper-service1/issues/71)) ([4cc9a71](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/4cc9a71fe5a03c89ad7e5c7e50abfca1e5cc3aad))
+* lab 4 ([#78](https://github.com/gocloudLa/terraform-aws-wrapper-service1/issues/78)) ([9b4f4ea](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/9b4f4eabaef729e9aae7fbceb9d477ae4f72af7a))
+* **new_feature3:** add feature ([#73](https://github.com/gocloudLa/terraform-aws-wrapper-service1/issues/73)) ([a12c3c9](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/a12c3c9aa3cc6836d18772730f2d7cf8d67f487d))
+* remove unused ([970da60](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/970da604a2a137dac4cfa417adbc270d393c424b))
+* remove unused data ([13fd4d3](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/13fd4d36088b13f28365ef66d94b41082a5d47e1))
+
+
+### Bug Fixes
+
+* **readme:** readme.yml file location ([2de4d9a](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/2de4d9a9cc3602b79aa8796312f621876630bb27))
+
 ## [3.1.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v3.0.0...v3.1.0) (2025-07-31)
 
 
