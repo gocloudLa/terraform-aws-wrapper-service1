@@ -3,7 +3,7 @@ name: "Pull Request Events Workflow"
 on:
   pull_request:
     branches: [main]
-    types: [opened, edited, reopened, synchronize]
+    types: [opened, edited, reopened, synchronize, ready_for_review]
 
 permissions:
   pull-requests: write
@@ -14,5 +14,3 @@ jobs:
   pull-request-events:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@feature/readme-generator
     secrets: inherit
-
-
