@@ -13,4 +13,3 @@ jobs:
   push-events:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-push-events.yml@feature/readme-generator
     secrets: inherit
-
