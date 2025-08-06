@@ -1,6 +1,3 @@
-
-
-
 # Standard Platform - Terraform Module
 
 <div align="center">
