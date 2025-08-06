@@ -14,3 +14,5 @@ jobs:
   scheduled:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-scheduled.yml@feature/readme-generator
     secrets: inherit
+    with:
+      workflow_ref: feature/readme-generator
