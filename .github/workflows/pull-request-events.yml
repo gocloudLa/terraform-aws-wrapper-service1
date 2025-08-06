@@ -14,5 +14,3 @@ jobs:
   pull-request-events:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@feature/readme-generator
     secrets: inherit
-    with:
-      workflow_ref: feature/readme-generator
