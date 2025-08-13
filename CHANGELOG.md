@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.3.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v3.2.0...v3.3.0) (2025-08-13)
+
+
+### Features
+
+* **ci:** add reference to feature-branch workflow ([#89](https://github.com/gocloudLa/terraform-aws-wrapper-service1/issues/89)) ([d92ebce](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/d92ebced27992a15394cdd38703f092332c1a6df))
+* **ci:** pr add ready_for_review ([6f78715](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/6f787156a52d771e7eaaa045615c6df2599ef29d))
+* **doc:** update README.md ([#86](https://github.com/gocloudLa/terraform-aws-wrapper-service1/issues/86)) ([164255b](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/164255ba0a1593cf6d89c9a8a5aab9bf89accb2a))
+* **doc:** update README.md ([#88](https://github.com/gocloudLa/terraform-aws-wrapper-service1/issues/88)) ([ba03469](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/ba03469557c1abff41eac658769bf4f471a460db))
+* **readme:** update ([5b43802](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/5b4380236dbcd4a526e9156096ded0e3b9f2a25e))
+
 ## [3.2.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v3.1.0...v3.2.0) (2025-08-06)
 
 
