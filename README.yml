@@ -1,5 +1,17 @@
 module_name: Terraform ACM SSL Module VERSION2
 module_description: The Terraform Wrapper for ACM simplifies the configuration of the SSL Certificate Service in the AWS cloud. This wrapper functions as a predefined template, facilitating the creation and management of ACM by handling all the technical details.
+
+module_badges:
+  - url: "https://github.com/gocloudLa/terraform-aws-wrapper-service1/releases/latest"
+    image: "https://img.shields.io/github/v/release/gocloudLa/terraform-aws-wrapper-service1.svg?style=for-the-badge"
+    alt: "Latest Release"
+  - url: ""
+    image: "https://img.shields.io/github/last-commit/gocloudLa/terraform-aws-wrapper-service1.svg?style=for-the-badge"
+    alt: "Last Commit"
+  - url: "https://registry.terraform.io/modules/gocloudLa/wrapper-service1/aws"
+    image: "https://img.shields.io/badge/Terraform-Registry-7B42BC?style=for-the-badge&logo=terraform&logoColor=white"
+    alt: "Terraform Registry"
+
 quick_start: |
   ```hcl
   acm_parameters = {
@@ -22,7 +34,9 @@ quick_start: |
   
     acm_defaults = var.acm_defaults
   ```
-features: []
+features: [
+  
+]
 important_notes: ""
 input_table: |
   | create_certificate | Determines if a new certificate should be created. | `bool` | `true` | no |
