@@ -34,9 +34,227 @@ quick_start: |
   
     acm_defaults = var.acm_defaults
   ```
-features: [
-  
-]
+
+features:
+  - icon: 🛡️
+    title: Web Application Firewall
+    short_description: Configures WAF rules and automatically attaches WebACL to ALB listeners
+    long_description: |
+      Perform the creation and configuration of WAF rules (WebAcl) as requested in the configuration, the new WebAcl generated is attached by default to the listeners used by the Amazon ALB service.
+    examples:
+      - title: Configuration Code
+        code: |
+          ```hcl
+          alb_parameters = {
+            "external-00" = {
+              ...
+              waf_logging_enable    = true
+              waf_logging_filter    = {} # Log All events (default only COUNT & BLOCK)
+              # waf_logging_retention =  # Default 7 days
+              waf_rules = [
+                {
+                  name     = "AWSManagedRulesCommonRuleSet-rule-1"
+                  priority = "10"
+          
+                  override_action = "none"
+          
+                  visibility_config = {
+                    metric_name = "AWSManagedRulesCommonRuleSet-metric"
+                  }
+          
+                  managed_rule_group_statement = {
+                    name        = "AWSManagedRulesCommonRuleSet" //WCU 700
+                    vendor_name = "AWS"
+                    rule_action_overrides = [
+                      {
+                        name = "SizeRestrictions_Cookie_HEADER"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "SizeRestrictions_BODY"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "EC2MetaDataSSRF_BODY"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "EC2MetaDataSSRF_COOKIE"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "EC2MetaDataSSRF_URIPATH"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "EC2MetaDataSSRF_QUERYARGUMENTS"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "CrossSiteScripting_BODY"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "NoUserAgent_HEADER"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "SizeRestrictions_QUERYSTRING"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "GenericLFI_BODY"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "GenericRFI_BODY"
+                        action_to_use = { count = {} }
+                      }
+                    ]
+                  }
+                },
+                {
+                  name     = "AWSManagedRulesKnownBadInputsRuleSet-rule-2"
+                  priority = "20"
+          
+                  override_action = "none"
+          
+                  visibility_config = {
+                    metric_name = "AWSManagedRulesKnownBadInputsRuleSet-metric"
+                  }
+          
+                  managed_rule_group_statement = {
+                    name        = "AWSManagedRulesKnownBadInputsRuleSet" //WCU 200
+                    vendor_name = "AWS"
+                    rule_action_overrides = [
+                      {
+                        name = "PROPFIND_METHOD"
+                        action_to_use = { count = {} }
+                      },
+                      {
+                        name = "Log4JRCE"
+                        action_to_use = { count = {} }
+                      }
+                    ]
+                  }
+                },
+                {
+                  name     = "AWSManagedRulesSQLiRuleSet-rule-3"
+                  priority = "30"
+          
+                  override_action = "none"
+          
+                  visibility_config = {
+                    metric_name = "AWSManagedRulesSQLiRuleSet-metric"
+                  }
+          
+                  managed_rule_group_statement = {
+                    name        = "AWSManagedRulesSQLiRuleSet" //WCU 200
+                    vendor_name = "AWS"
+                    rule_action_overrides = [
+                      {
+                        name = "SQLi_BODY"
+                        action_to_use = { count = {} }
+                      }
+                    ]
+                  }
+                },
+                {
+                  name     = "AWSManagedRulesLinuxRuleSet-rule-4"
+                  priority = "40"
+          
+                  override_action = "none"
+          
+                  visibility_config = {
+                    metric_name = "AWSManagedRulesLinuxRuleSet-metric"
+                  }
+          
+                  managed_rule_group_statement = {
+                    name        = "AWSManagedRulesLinuxRuleSet" //WCU 700
+                    vendor_name = "AWS"
+          
+                  }
+                },
+                {
+                  name     = "AWSManagedRulesAmazonIpReputationList-rule-5"
+                  priority = "50"
+          
+                  override_action = "none"
+          
+                  visibility_config = {
+                    metric_name = "AWSManagedRulesAmazonIpReputationList-metric"
+                  }
+          
+                  managed_rule_group_statement = {
+                    name        = "AWSManagedRulesAmazonIpReputationList" //WCU 25
+                    vendor_name = "AWS"
+                  }
+                },
+                {
+                  name     = "AWSManagedRulesAnonymousIpList-rule-6"
+                  priority = "60"
+          
+                  override_action = "none"
+          
+                  visibility_config = {
+                    metric_name = "AWSManagedRulesAnonymousIpList-metric"
+                  }
+          
+                  managed_rule_group_statement = {
+                    name        = "AWSManagedRulesAnonymousIpList" //WCU 50
+                    vendor_name = "AWS"
+                    rule_action_overrides = [
+                      {
+                        name = "HostingProviderIPList"
+                        action_to_use = { count = {} }
+                      }
+                    ]
+                  }
+                },
+              ]
+              ...
+            }
+          }
+          ```
+  - icon: 🌐
+    title: DNS Record
+    short_description: Registers a CNAME DNS record in a Route53 hosted zone
+    long_description: |
+      Register a CNAME DNS record in a Route53 hosted zone that is present within the account, which can be public or private depending on the desired visibility type of the record.
+    examples:
+      - title: Configuration Code
+        code: |
+          ```hcl
+          dns_records = {
+            "" = {
+              # zone_name    = local.zone_private
+              # private_zone = true
+              zone_name    = local.zone_public
+              private_zone = false
+            }
+          }
+          ```
+  - icon: 📄
+    title: Access Log
+    short_description: Create S3 bucket and configure LoadBalancer access log in S3
+    long_description: |
+      Create S3 bucket and configure LoadBalancer access log in S3
+    examples:
+      - title: Configuration Code
+        code: |
+          ```hcl
+          enable_alb_logs        = true # Default: false
+          alb_logs_force_destroy = true # Default: false
+          alb_logs_lifecycle = [{
+            id      = "move-to-onezone-ia"
+            enabled = true
+            transition = [{
+              days          = 30
+              storage_class = "ONEZONE_IA"
+            }]
+          }]
+          ```
+
 important_notes: ""
 input_table: |
   | create_certificate | Determines if a new certificate should be created. | `bool` | `true` | no |
