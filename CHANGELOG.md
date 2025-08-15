@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.5.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v3.4.0...v3.5.0) (2025-08-15)
+
+
+### Features
+
+* **readme:** add ([29478a5](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/29478a502538352b802d7c4ab47f4e7bc063651c))
+
+
+### Bug Fixes
+
+* **dependabot:** examples directory ([16fe0e1](https://github.com/gocloudLa/terraform-aws-wrapper-service1/commit/16fe0e142b2562d7f52bb90c8e150068749407d8))
+
 ## [3.4.0](https://github.com/gocloudLa/terraform-aws-wrapper-service1/compare/v3.3.0...v3.4.0) (2025-08-13)
 
 
